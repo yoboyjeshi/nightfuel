@@ -26,9 +26,9 @@ Night-shift workers — the people whose entire food universe at 2am is a servo 
 
 ## Built with
 
-- Vanilla **HTML**, **CSS**, and **JavaScript** — no frameworks, no build step.
-- Built via **Spec-Driven Development** with OpenCode as junior engineer, for the **AMZN-SWDV-007 Startup Studio** project.
-- All founder decisions, design tokens, and page architecture are tracked in [`MISSION.md`](MISSION.md).
+- Vanilla HTML, CSS, and JavaScript — no frameworks, no build step.
+- Built via Spec-Driven Development (SDD) with OpenCode as the junior engineer, for the AMZN-SWDV-007 Startup Studio project.
+- All founder decisions, design tokens, and page architecture are tracked in MISSION.md.
 
 ## Why I built this
 
