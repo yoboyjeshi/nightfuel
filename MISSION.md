@@ -129,3 +129,22 @@ Welcome to your Founder Notebook. This is the single source of truth for your st
 - [ ] Implement feature showcase sections
 - [ ] Add interactive elements and conversion forms
 - [ ] Final visual polish and responsive testing
+
+---
+
+## Founder Reflection
+
+**1. What problem did you solve?**
+Night-shift workers have only servo and vending-machine junk to eat at 2am, no time to meal-prep, and grab the worst option every shift. NightFuel ranks what's in the machine by sugar so you grab the pick that won't crash you before dawn. I built it because I live it — I'm a night-shift Area Manager standing at that servo every shift.
+
+**2. What was the most important decision?**
+Scoping down hard. My first instinct was a bigger product (photo recognition, accounts, a nutrition engine). The Simplicity Check forced me to one rule: rank by sugar, no input. One clear thing a stranger gets in 5 seconds beat a clever thing nobody could explain.
+
+**3. What AI suggestion did you reject?**
+The audit flagged "servo" as jargon and told me to define it. I rejected that — my users are Australian night-shift workers; every one of them says "servo." Defining it would have weakened the honest brand voice. The AI didn't know my audience.
+
+**4. What was OpenCode's most useful action?**
+The pre-launch audit. It caught a real mobile bug (navbar overflowing at 320px, causing horizontal scroll) I'd never have seen on desktop, plus a missing accessible label on the email input.
+
+**5. What would you build next?**
+The actual working app behind the landing page: the pre-ranked pick list for the common BWU6 vending and servo stock, tested on my own night shift first.
