@@ -1,0 +1,450 @@
+/* =============================================
+   Design Tokens
+   ============================================= */
+
+:root {
+  /* Colors (from MISSION.md §3) */
+  --bg:         #0A0F13;
+  --surface:    #141C23;
+  --accent:     #C4FF47;
+  --text:       #F4F7FA;
+  --muted:      #9AA7B4;
+
+  /* Typography (from MISSION.md §3) */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  /* Spacing scale */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  16px;
+  --space-4:  24px;
+  --space-5:  32px;
+  --space-6:  48px;
+
+  /* Border radius */
+  --radius: 8px;
+
+  /* Layout */
+  --container-max: 1080px;
+}
+
+/* =============================================
+   Base Reset
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* =============================================
+   Layout: container & section spacing
+   ============================================= */
+
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+section {
+  padding-block: clamp(64px, 10vw, 120px);
+}
+
+/* =============================================
+   Navbar
+   ============================================= */
+
+/* Navbar sits sticky above the fold */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--surface);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 64px;
+}
+
+/* Narrow screens: shrink wordmark + button so they never crowd or overflow.
+   Desktop look is untouched — this only applies below 520px. */
+@media (max-width: 520px) {
+  .wordmark {
+    font-size: 1.2rem;
+  }
+
+  .navbar .btn {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Phones: drop the full label to "Join" — the wordmark + full button
+   cannot fit inside a 320px viewport. Same link, same behaviour. */
+.cta--short {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .cta--full {
+    display: none;
+  }
+
+  .cta--short {
+    display: inline;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =============================================
+   Navbar
+   ============================================= */
+
+.wordmark {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.wordmark__accent {
+  color: var(--accent);
+}
+
+/* =============================================
+   Buttons
+   ============================================= */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn--volt {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+.btn--volt:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(196, 255, 71, 0.25);
+}
+
+.btn--large {
+  font-size: 1.1rem;
+  padding: 16px 32px;
+}
+
+/* =============================================
+   Hero
+   ============================================= */
+
+.hero {
+  padding-block: clamp(96px, 16vw, 200px);
+}
+
+.hero__headline {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  max-width: 20ch;
+}
+
+.hero__subhead {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  max-width: 46ch;
+  margin-block: var(--space-4) var(--space-5);
+}
+
+/* =============================================
+   Section titles
+   ============================================= */
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-4);
+}
+
+/* =============================================
+   Problem & Solution
+   ============================================= */
+
+.problem__body,
+.solution__body {
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  max-width: 52ch;
+  margin-bottom: var(--space-3);
+}
+
+/* =============================================
+   How It Works
+   ============================================= */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.step {
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+}
+
+.step__num {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+
+.step__title {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-2);
+}
+
+.step__text {
+  color: var(--muted);
+}
+
+/* =============================================
+   Founder note
+   ============================================= */
+
+.founder-quote {
+  background-color: var(--surface);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  max-width: 52ch;
+  font-family: var(--font-body);
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.founder-quote__byline {
+  margin-top: var(--space-3);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* =============================================
+   Final CTA
+   ============================================= */
+
+.final-cta__inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.final-cta__hook {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  max-width: 42ch;
+  margin-bottom: var(--space-5);
+}
+
+.waitlist-form {
+  display: flex;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: var(--space-3);
+}
+
+.waitlist-form__input {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--surface);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.waitlist-form__input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.waitlist-form__input::placeholder {
+  color: var(--muted);
+}
+
+.final-cta__micro {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.waitlist-success {
+  margin-top: var(--space-3);
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* =============================================
+   Footer
+   ============================================= */
+
+.footer {
+  border-top: 1px solid var(--surface);
+  padding-block: var(--space-6);
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.footer__tagline,
+.footer__made {
+  color: var(--muted);
+}
+
+.footer__made {
+  font-size: 0.9rem;
+}
+
+/* =============================================
+   Motion — motion budget: 1 hero + 1 scroll + 1 micro
+   ============================================= */
+
+/* --- 1) Hero entrance: gentle fade-and-rise on load --- */
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__headline,
+.hero__subhead,
+.hero .btn {
+  animation: fade-rise 0.55s ease-out both;
+}
+
+.hero__subhead {
+  animation-delay: 0.12s;
+}
+
+.hero .btn {
+  animation-delay: 0.24s;
+}
+
+/* --- 2) Scroll reveal: fade-and-rise as sections enter the viewport ---
+   Hidden state is scoped to .js so content is never stuck invisible
+   if JavaScript fails to load. */
+
+.reveal {
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.js .reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- 3) Micro: the button hover-lift lives in .btn--volt:hover (above).
+   That is the single microinteraction per the motion budget. --- */
+
+/* =============================================
+   Responsive
+   ============================================= */
+
+@media (max-width: 960px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .waitlist-form {
+    flex-direction: column;
+  }
+}
+
+/* =============================================
+   Motion: reduced-motion respect
+   ============================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

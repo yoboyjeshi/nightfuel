@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NightFuel — Fuelling the night shift</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Base shell: empty labelled sections ===== -->
+
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a class="wordmark" href="#hero">Night<span class="wordmark__accent">Fuel</span></a>
+      <a class="btn btn--volt" href="#final-cta" aria-label="Join the waitlist"><span class="cta--full">Join the waitlist</span><span class="cta--short">Join</span></a>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1 class="hero__headline">Nights don't stop.<br />Neither do you.</h1>
+      <p class="hero__subhead">The vending machine's your only option at 2am. NightFuel ranks what's actually in there by sugar — so you grab the pick that won't crash you before dawn.</p>
+      <a class="btn btn--volt btn--large" href="#final-cta">Get the better pick</a>
+    </div>
+  </section>
+
+  <section class="problem reveal" id="problem">
+    <div class="container">
+      <h2 class="section-title">Your options at 2am are trash.</h2>
+      <p class="problem__body">The servo and the vending machine are the only game at those hours — and meal prep died by your first night shift.</p>
+      <p class="problem__body">So you stand there, grab the worst option, feel like garbage, and waste money. Every single shift.</p>
+    </div>
+  </section>
+
+  <section class="solution reveal" id="solution">
+    <div class="container">
+      <h2 class="section-title">Get this, not that.</h2>
+      <p class="solution__body">NightFuel is pre-loaded with the common vending and servo stock, ranked by least sugar. You don't type or scan anything — just open it and see the best pick.</p>
+      <p class="solution__body">No input. No diet lecture. One number, one pick.</p>
+    </div>
+  </section>
+
+  <section class="how-it-works reveal" id="how-it-works">
+    <div class="container">
+      <h2 class="section-title">Three steps. Ten seconds.</h2>
+      <div class="steps">
+        <article class="step">
+          <span class="step__num">1</span>
+          <h3 class="step__title">Open NightFuel</h3>
+          <p class="step__text">At the machine or on the drive home.</p>
+        </article>
+        <article class="step">
+          <span class="step__num">2</span>
+          <h3 class="step__title">See the best picks</h3>
+          <p class="step__text">Common stock, ranked by least sugar.</p>
+        </article>
+        <article class="step">
+          <span class="step__num">3</span>
+          <h3 class="step__title">Get back to work</h3>
+          <p class="step__text">Grab it, pay, and dodge the crash.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="founder-note reveal" id="founder-note">
+    <div class="container">
+      <h2 class="section-title">Built from a real 2am.</h2>
+      <blockquote class="founder-quote">
+        "I'm a night-shift Area Manager. Every shift I'm standing at the servo with no time and no good options. NightFuel is the tool I wish I had — honest, no-BS, no smug diet advice."
+        <footer class="founder-quote__byline">— The founder</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="final-cta" id="final-cta">
+    <div class="container final-cta__inner">
+      <h2 class="section-title">Fuel your next shift.</h2>
+      <p class="final-cta__hook">Remember this for tonight. We'll email you the moment it's ready.</p>
+      <form class="waitlist-form" id="waitlist-form">
+        <input class="waitlist-form__input" type="email" placeholder="you@example.com" aria-label="Email address" autocomplete="email" required />
+        <button class="btn btn--volt" type="submit">Join the waitlist</button>
+      </form>
+      <p class="final-cta__micro">No spam, ever.</p>
+      <p class="waitlist-success" id="waitlist-success" hidden>You're on the list. See you at 2am.</p>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <a class="wordmark" href="#hero">Night<span class="wordmark__accent">Fuel</span></a>
+      <p class="footer__tagline">Nights don't stop. Neither do you.</p>
+      <p class="footer__made">Made at 2am, for the 2am.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
